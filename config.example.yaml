@@ -1,0 +1,25 @@
+# Copy to config.yaml and fill in secrets. Do not commit config.yaml.
+
+check_interval_minutes: 10
+public_ip_url: "https://api64.ipify.org?format=text"
+# Optional; empty = message.log next to the binary
+log_file: ""
+
+email:
+  enabled: false
+  from: "时代微尘 <you@sohu.com>"
+  to:
+    - "you@sohu.com"
+  subject_prefix: "公网地址： "
+  smtp_host: "smtp.sohu.com"
+  smtp_port: 25
+  username: "you@sohu.com"
+  password: "CHANGE_ME_APP_PASSWORD"
+
+cloudflare:
+  api_token: "CHANGE_ME_CLOUDFLARE_API_TOKEN"
+  zone_id: "CHANGE_ME_ZONE_ID"
+  dns_record_id: "CHANGE_ME_DNS_RECORD_ID"
+  domain: "home.19121122.xyz"
+  proxied: false
+  ttl: 60

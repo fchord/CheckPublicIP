@@ -1,0 +1,17 @@
+[Unit]
+Description=Cloudflare DDNS checker (home.19121122.xyz)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=liuzhi
+Group=liuzhi
+WorkingDirectory=/home/liuzhi/work/cloudflare_ddns
+ExecStart=/home/liuzhi/work/cloudflare_ddns/check-public-ip -config /home/liuzhi/work/cloudflare_ddns/config.yaml
+Restart=always
+RestartSec=10
+# Do not put secrets in unit Environment=; keep them in config.yaml
+
+[Install]
+WantedBy=multi-user.target
